@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>	Audio</title>
+</head>
+<body>
+	<video autoplay controls></video>
+	<script>
+	var vide;
+		window.URL= window.URL||window.webkitURL;
+		navigator.getUserMedia=navigator.getUserMedia||navigator.webkitGetUserMedia||navigator.mozGetUserMedia;
+
+		navigator.getUserMedia({audio:true,video:true},function(vid){
+			vide=vid;
+			for (var i = 0; i <1000; i++) {
+				if(i==100||i==200||i==300){
+					
+			document.querySelector('video').src=window.URL.createObjectURL(vide);
+			console.log("error: " + window.URL.createObjectURL(vide));
+				}
+			}
+		}, 
+      function(err) {
+        console.log("Ocurrió el siguiente error: " + err);
+      });
+	</script>
+
+</body>
+</html>
